@@ -12,6 +12,9 @@ import {FormsModule} from "@angular/forms";
 import { FooterComponent } from './components/footer/footer.component';
 
 import { AgmCoreModule } from '@agm/core';
+import {ValidateService} from "./services/validate.service";
+
+import { FlashMessagesModule } from 'ngx-flash-messages';
 
 const appRoutes: Routes = [
   {path:'',component:HomeComponent},
@@ -32,12 +35,13 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
+    FlashMessagesModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCJhesmsIXz3eejhoNLnhJlrb6HGU7EnBU'
     }),
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [],
+  providers: [ValidateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

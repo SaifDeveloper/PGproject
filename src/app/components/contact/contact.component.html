@@ -1,7 +1,38 @@
-<h1>{{ title }}</h1>
+<div class="div">
 
-<!-- this creates a google map on the page with the given lat/lng from -->
-<!-- the component as the initial center of the map: -->
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
-  <agm-marker [latitude]="pglat" [longitude]="pglng"></agm-marker>
-</agm-map>
+
+<!--===CONTACT FORM=== -->
+
+  <div>
+<h1>Have any thoughts ?</h1><br>
+    <form (submit)="onContactSubmit()">
+      <div class="form-group">
+      <label>Name</label><br>
+      <input type="text" [(ngModel)]="name" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Phone</label><br>
+        <input type="number" [(ngModel)]="phone" name="phone" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="comment">Comment:</label>
+        <textarea [(ngModel)]="comment" name="comment" class="form-control" rows="5" id="comment"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary" value="submit">
+    </form>
+
+  </div>
+
+  <!--===MAP=== -->
+  <div class="div">
+    <h1>{{ title }}</h1>
+
+    <!-- this creates a google map on the page with the given lat/lng from -->
+    <!-- the component as the initial center of the map: -->
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+      <agm-marker [latitude]="pglat" [longitude]="pglng"></agm-marker>
+    </agm-map>
+  </div>
+
+
+</div>
